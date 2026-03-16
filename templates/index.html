@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data.name }} | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ data.name }} — {{ data.title }}. Portfolio showcasing projects and skills.">
+    <meta name="theme-color" content="#050914">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body>
+
+<!-- ─── AMBIENT BACKGROUND ─── -->
+<div class="ambient" aria-hidden="true">
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="aurora aurora-4"></div>
+    <div class="grid-overlay"></div>
+</div>
+
+<!-- ─── NAVBAR ─── -->
+<header class="navbar" id="navbar">
+    <div class="nav-inner wrap">
+        <a class="nav-logo" href="#">
+            <span class="logo-mark"><span class="logo-dot"></span></span>
+            {{ data.name.split()[0] }}<span class="logo-accent">.</span>
+        </a>
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- ─── HERO ─── -->
+<section id="hero" class="hero reveal">
+    <div class="hero-content wrap">
+        <div class="hero-text">
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                ✦ Available for work
+            </div>
+            <h1>Hi, I'm<br><span class="highlight">{{ data.name }}</span></h1>
+            <p class="typing-wrap">
+                <span class="typing">{{ data.title }}</span><span class="cursor">|</span>
+            </p>
+            <p class="lead">{{ data.about }}</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View My Work <span class="btn-arrow">→</span></a>
+                <a href="#contact" class="btn-ghost">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="img-frame">
+                <div class="img-bg-blob"></div>
+                <img src="{{ url_for('static', filename='images/ID.png') }}" alt="{{ data.name }}">
+                <div class="img-ring ring-outer"></div>
+                <div class="img-ring ring-inner"></div>
+                <div class="img-glow"></div>
+                <div class="float-badge float-badge--tl">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Data
+                </div>
+                <div class="float-badge float-badge--br">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    Developer
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
+    </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="about-section wrap reveal">
+    <div class="section-label">// ABOUT ME</div>
+    <div class="about-grid">
+        <div class="about-avatar">
+            <div class="avatar-frame">
+                <img src="{{ url_for('static', filename='images/ID.png') }}" alt="{{ data.name }}">
+                <div class="avatar-border"></div>
+            </div>
+            <div class="about-socials">
+                <a href="{{ data.github }}" target="_blank" rel="noopener" class="chip-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.532 1.03 1.532 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    GitHub
+                </a>
+                <a href="{{ data.linkedin }}" target="_blank" rel="noopener" class="chip-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="mailto:{{ data.email }}" class="chip-link">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Email
+                </a>
+            </div>
+        </div>
+        <div class="about-card glass-card">
+            <h2>About Me</h2>
+            <p>{{ data.about }}</p>
+            <p class="about-extra">I love solving real-world problems through clean, efficient code. Whether it's a web application, a data-driven tool, or a desktop utility, I bring curiosity and dedication to every project. I'm always learning and growing as a developer.</p>
+            <div class="about-info">
+                <div class="info-item">
+                    <span class="info-label">Focus</span>
+                    <span class="info-value">Full Stack Development & Data Analyst</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="info-value status-available">
+                        <span class="status-dot"></span>Available for opportunities
+                    </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Philippines 🇵🇭</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span class="info-value"><a href="mailto:{{ data.email }}" class="inline-link">{{ data.email }}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section id="skills" class="skills-section wrap reveal">
+    <div class="section-label">// SKILLS & TOOLS</div>
+    <div class="section-header">
+        <h2>My Toolkit</h2>
+        <p class="section-sub">Technologies and languages I work with</p>
+    </div>
+    <div class="skills-grid">
+        {% for skill in data.skills %}
+        <div class="skill-card glass-card">
+            <div class="skill-icon">
+                {% if skill.name.lower() == 'html' %}
+                    <img src="{{ url_for('static', filename='images/tech/html.svg') }}" alt="HTML">
+                {% elif skill.name.lower() == 'css' %}
+                    <img src="{{ url_for('static', filename='images/tech/css.svg') }}" alt="CSS">
+                {% elif skill.name.lower() == 'javascript' %}
+                    <img src="{{ url_for('static', filename='images/tech/js.svg') }}" alt="JavaScript">
+                {% elif skill.name.lower() == 'python' %}
+                    <img src="{{ url_for('static', filename='images/tech/python.svg') }}" alt="Python">
+                {% elif skill.name.lower() == 'github' %}
+                    <svg width="30" height="30" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.52-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                {% elif skill.name.lower() == 'vs code' %}
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/><path d="M6 2l2 2"/><path d="M18 22l-2-2"/></svg>
+                {% elif skill.name.lower() == 'sql' %}
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/><path d="M6 6v12"/><path d="M12 6v12"/><path d="M18 6v12"/></svg>
+                {% else %}
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.3 16.6L2 12l6.3-4.6L9 9.7 6.6 12 9 14.3l-.7 2.3zM15.7 16.6l.7-2.3L18.4 12 16 9.7l.7-1.1L22 12l-5.3 4.6z"/></svg>
+                {% endif %}
+            </div>
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-category">{{ skill.category }}</span>
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--level: {{ skill.level }}%"></div>
+            </div>
+            <span class="skill-level-text">{{ skill.level }}%</span>
+            <div class="skill-glow"></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ─── PROJECTS ─── -->
+<section id="projects" class="projects-section wrap reveal">
+    <div class="section-label">// PROJECTS</div>
+    <div class="section-header">
+        <h2>Selected Work</h2>
+        <p class="section-sub">Projects I've built with purpose</p>
+    </div>
+    <div class="projects-grid">
+        {% for project in data.projects %}
+        <article class="project-card glass-card">
+            <div class="project-media">
+                <div class="project-media-pattern"></div>
+                <div class="project-number">0{{ loop.index }}</div>
+                <div class="project-media-overlay"></div>
+                <div class="project-banner-tags">
+                    {% for tech in project.technologies %}<span class="banner-tag">{{ tech }}</span>{% endfor %}
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-info-top">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        {% for tech in project.technologies %}<span class="tag">{{ tech }}</span>{% endfor %}
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-ghost-sm" href="{{ project.github }}" target="_blank" rel="noopener">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.532 1.03 1.532 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ─── CERTIFICATES ─── -->
+<section id="certificates" class="certificates-section wrap reveal">
+    <div class="section-label">// ACHIEVEMENTS</div>
+    <div class="section-header">
+        <h2>Certificates & Credentials</h2>
+        <p class="section-sub">Courses, trainings, and certifications I've earned</p>
+    </div>
+    <div class="certificates-grid">
+        {% for cert in data.certificates %}
+        <div class="cert-card glass-card">
+            <div class="cert-image">
+                {% if cert.image is defined and cert.image %}
+                <img src="{{ url_for('static', filename='images/certs/' ~ cert.image) }}" alt="{{ cert.title }}">
+                {% else %}
+                <div class="cert-placeholder">
+                    <svg width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    <span>Certificate</span>
+                </div>
+                {% endif %}
+                <div class="cert-ribbon">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+            </div>
+            <div class="cert-info">
+                <div class="cert-org">{{ cert.issuer }}</div>
+                <h3 class="cert-title">{{ cert.title }}</h3>
+                <div class="cert-meta">
+                    <span class="cert-date">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        {{ cert.date }}
+                    </span>
+                    {% if cert.credential_id is defined and cert.credential_id %}
+                    <span class="cert-id">ID: {{ cert.credential_id }}</span>
+                    {% endif %}
+                </div>
+                {% if cert.url is defined and cert.url %}
+                <a href="{{ cert.url }}" target="_blank" rel="noopener" class="cert-verify">
+                    Verify
+                    <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+                {% endif %}
+            </div>
+            <div class="cert-glow"></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="contact-section wrap reveal">
+    <div class="section-label">// CONTACT</div>
+    <div class="contact-grid">
+        <div class="contact-intro">
+            <h2>Let's Build<br><span class="highlight">Something</span><br>Together</h2>
+            <p>Have a project in mind, want to collaborate, or just want to say hi? I'd love to hear from you — drop me a message and I'll respond as soon as I can.</p>
+            <div class="contact-details">
+                <a href="mailto:{{ data.email }}" class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <span class="contact-detail-label">Email</span>
+                        <span class="contact-detail-value">{{ data.email }}</span>
+                    </div>
+                </a>
+                <a href="{{ data.github }}" target="_blank" rel="noopener" class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.532 1.03 1.532 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    </div>
+                    <div>
+                        <span class="contact-detail-label">GitHub</span>
+                        <span class="contact-detail-value">github.com/mayciii</span>
+                    </div>
+                </a>
+                <a href="{{ data.linkedin }}" target="_blank" rel="noopener" class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </div>
+                    <div>
+                        <span class="contact-detail-label">LinkedIn</span>
+                        <span class="contact-detail-value">May Sigrid Dimaano</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <form id="contactForm" class="contact-form glass-card" aria-label="Contact form" novalidate>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contact-name">Your Name</label>
+                    <input id="contact-name" name="name" type="text" placeholder="e.g. John Dela Cruz" required autocomplete="name">
+                    <span class="form-line"></span>
+                    <span class="form-error" data-field="name"></span>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Your Email</label>
+                    <input id="contact-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+                    <span class="form-line"></span>
+                    <span class="form-error" data-field="email"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input id="contact-subject" name="subject" type="text" placeholder="What is this about?" autocomplete="off">
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" placeholder="Tell me about your project or idea..." rows="5" required></textarea>
+                <span class="form-line"></span>
+                <span class="form-error" data-field="message"></span>
+            </div>
+            <button type="submit" class="btn-primary submit-btn">
+                Send Message <span class="btn-arrow">→</span>
+            </button>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <a href="#hero" class="footer-logo">
+            <span class="logo-dot"></span>
+            {{ data.name.split()[0] }}<span class="logo-accent">.</span>
+        </a>
+        <nav class="footer-nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <span class="footer-copy">© {{ year }} {{ data.name }} · Built with Flask</span>
+    </div>
+</footer>
+
+<!-- ─── SUCCESS MODAL ─── -->
+<div id="successModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content glass-card">
+        <button id="modalClose" class="modal-close" aria-label="Close">×</button>
+        <div class="modal-icon">✓</div>
+        <h3>Message Sent!</h3>
+        <p>Thanks <strong><span id="userName"></span></strong> — I'll get back to you soon.</p>
+        <button id="modalOk" class="btn-primary" style="width:100%;justify-content:center;">Got it!</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
