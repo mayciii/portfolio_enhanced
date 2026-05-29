@@ -1,32 +1,50 @@
-# 💼 My Portfolio
+# 🌐 My Portfolio — May Sigrid Dimaano
 
-Welcome to my personal portfolio! This project showcases my skills, projects, and experiences as a developer.
+> ⚠️ **Work in Progress** — This portfolio is actively being developed and improved.
 
----
+A personal developer portfolio built with Flask, showcasing my projects, skills, and certificates.
 
-## 📸 Preview
-
-![Portfolio Preview](preview.png)
+🔗 **Live Site:** [my-portfolio-jahm.onrender.com](https://my-portfolio-jahm.onrender.com)
 
 ---
 
-## 🚀 Features
+## ✅ Current Features
 
-- Responsive design
-- Projects showcase
-- Skills section
-- Contact information
+- Hero section with introduction
+- About section
+- Skills & Tools showcase
+- Projects section
+- Certificates section
+- Contact form
 
 ---
 
-## 🛠️ Built With
+## 🚧 Upcoming Features
 
-- HTML
-- CSS
-- JavaScript
+- [ ] 🤖 AI Chatbot — a personal assistant that answers questions about me
+- [ ] 📄 Resume Viewer — visitors can view and download my resume
+- [ ] 🎨 UI/UX improvements
+- [ ] 📱 Better mobile responsiveness
+- [ ] ✨ More animations and interactions
+
+---
+
+## 🛠 Built With
+
+- Python
+- Flask
+- HTML / CSS / JavaScript
+- Gunicorn
+- Render (Hosting)
 
 ---
 
 ## 📬 Contact
 
-Feel free to reach out to me through my portfolio!
+- 📧 sigriddimaano@gmail.com
+- 💼 [LinkedIn](https://www.linkedin.com/in/may-sigrid-dimaano-4052a43aa)
+- 🐙 [GitHub](https://github.com/mayciii)
+
+---
+
+> This project is part of my journey toward becoming a Software Engineer and Data Scientist. 🚀
