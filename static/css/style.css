@@ -506,13 +506,21 @@ header, main, footer { position: relative; z-index: 1; }
 .cert-card:hover .cert-image img { transform: scale(1.05); }
 .cert-placeholder {
     width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 8px; color: rgba(255,209,102,0.4); position: relative;
+    gap: 10px; color: rgba(255,209,102,0.4); position: relative;
 }
 .cert-placeholder::before {
     content: ''; position: absolute; inset: 0;
     background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,209,102,0.025) 20px, rgba(255,209,102,0.025) 21px);
 }
-.cert-placeholder span { font-family: var(--font-head); font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,209,102,0.45); position: relative; z-index: 1; }
+.cert-logo {
+    width: 58px; height: 58px; display: grid; place-items: center;
+    border-radius: 16px;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+    position: relative; z-index: 1;
+}
+.cert-placeholder span { font-family: var(--font-head); font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,209,102,0.7); position: relative; z-index: 1; }
 .cert-placeholder svg { position: relative; z-index: 1; }
 .cert-ribbon {
     position: absolute; top: 10px; right: 10px;
