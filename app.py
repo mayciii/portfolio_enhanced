@@ -87,6 +87,15 @@ PORTFOLIO_DATA = {
             "technologies": ["HTML", "CSS", "Python", "Flask", "SQLite"],
             "github": "https://github.com/mayciii/project3",
         },
+        {   "title": "BatStateU-TNEU Lipa SITES",
+            "description": (
+                "A Web-Based Student Internship Tracking and Evaluation System "
+                "for On-the-Job Training Management at Batangas State University TNEU Lipa Campus"
+            ),
+            "technologies": ["HTML", "CSS", "JavaScript", "Python", "Flask", "MySQL"],
+            "github": "https://github.com/mayciii/SITES"
+
+        }
     ],
 
     # ── Certificates ─────────────────────────────────────────────────────────
@@ -94,32 +103,13 @@ PORTFOLIO_DATA = {
     # static/images/certs/ and set "image": "your-filename.jpg"
     # Leave "image" as None (or omit it) to show the placeholder graphic.
     "certificates": [
-        {
-            "title":    "Introduction to Python",
-            "issuer":   "DataCamp",
-            "date":     "2026",
-            "image":    None,
-            # "credential_id": "ABC123",
-            # "url": "https://coursera.org/verify/ABC123",
-        },
-        {
-            "title":    "Introduction to SQL",
-            "issuer":   "DataCamp",
-            "date":     "2026",
-            "image":    None,
-        },
-        {
-            "title":    "Intermediate SQL",
-            "issuer":   "DataCamp",
-            "date":     "2026",
-            "image":    None,
-        },
-        {
-            "title":    "Responsive Web Design",
-            "issuer":   "freeCodeCamp",
-            "date":     "Ongoing",
-            "image":    None,
-        },
+        {"title": "Introduction to Python", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Introduction to SQL", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Intermediate SQL", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Data Analysis with Python", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Pandas Foundations", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Machine Learning with Python", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Statistics for Data Science", "issuer": "DataCamp", "date": "2026", "image": None},
     ],
 }
 
