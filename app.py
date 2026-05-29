@@ -106,10 +106,10 @@ PORTFOLIO_DATA = {
         {"title": "Introduction to Python", "issuer": "DataCamp", "date": "2026", "image": None},
         {"title": "Introduction to SQL", "issuer": "DataCamp", "date": "2026", "image": None},
         {"title": "Intermediate SQL", "issuer": "DataCamp", "date": "2026", "image": None},
-        {"title": "Data Analysis with Python", "issuer": "DataCamp", "date": "2026", "image": None},
-        {"title": "Pandas Foundations", "issuer": "DataCamp", "date": "2026", "image": None},
-        {"title": "Machine Learning with Python", "issuer": "DataCamp", "date": "2026", "image": None},
-        {"title": "Statistics for Data Science", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Introduction  to AI Agents", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Introduction to Github Concepts", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Introduction to AI for Work", "issuer": "DataCamp", "date": "2026", "image": None},
+        {"title": "Understanding Machine Learning", "issuer": "DataCamp", "date": "2026", "image": None},
     ],
 }
 
