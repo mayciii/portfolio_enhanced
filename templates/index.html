@@ -8,10 +8,12 @@
     <meta name="theme-color" content="#050914">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
-</head>
+    </head>
 <body>
 
 <!-- ─── AMBIENT BACKGROUND ─── -->
@@ -348,6 +350,20 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        ['#loader', '#loader-screen', '.loader-overlay'].forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => el.remove());
+        });
+        document.body.classList.remove('intro-hidden', 'intro-show');
+        document.querySelectorAll('.hero, .hero-badge, .hero-text h1, .typing-wrap, .lead, .hero-buttons, .hero-image')
+            .forEach(el => {
+                el.classList.add('visible');
+                el.style.opacity = '';
+                el.style.transform = '';
+            });
+    });
+</script>
 <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </body>
 </html>

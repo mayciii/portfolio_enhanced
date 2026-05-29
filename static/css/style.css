@@ -28,6 +28,14 @@
     --shadow-hover:    0 30px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(108,99,255,0.2);
 }
 
+/* ── HIDE OLD LOADER OVERLAY */
+#loader, #loader-screen, .loader-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
 /* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
